@@ -24,29 +24,29 @@ export class ConfigComponent implements OnInit {
   }
 
   draw() {
-    var viz; 
-      var config = {
-          container_id: "viz",
-          server_url: "bolt://localhost:7687",
-          server_user: "neo4j",
-          server_password: "sorts-swims-burglaries",
-          labels: {
-              "Character": {
-                  "caption": "name",
-                  "size": "pagerank",
-                  "community": "community"
-              }
-          },
-          relationships: {
-              "INTERACTS": {
-                  "thickness": "weight",
-                  "caption": false
-              }
-          },
-          initial_cypher: "MATCH (n)-[r:INTERACTS]->(m) RETURN *"
-      };
+    // var viz; 
+    //   var config = {
+    //       container_id: "viz",
+    //       server_url: "bolt://localhost:7687",
+    //       server_user: "neo4j",
+    //       server_password: "sorts-swims-burglaries",
+    //       labels: {
+    //           "Character": {
+    //               "caption": "name",
+    //               "size": "pagerank",
+    //               "community": "community"
+    //           }
+    //       },
+    //       relationships: {
+    //           "INTERACTS": {
+    //               "thickness": "weight",
+    //               "caption": false
+    //           }
+    //       },
+    //       initial_cypher: "MATCH (n)-[r:INTERACTS]->(m) RETURN *"
+    //   };
 
-      viz = new NeoVis(config);
-      viz.render();
+    //   viz = new NeoVis(config);
+    //   viz.render();
   }
 }

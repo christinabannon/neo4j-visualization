@@ -1,0 +1,163 @@
+<!-- <p>select works!</p> -->
+
+<!-- <table ngShow="drinksPopulated">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Role</th>
+    </tr>
+</thead>
+<tbody >
+    <tr *ngFor="let drink of drinkList">
+        <td>1</td>
+        <td>{{drink.drink_name}}</td>
+        <td>{{drink.drink_id}}</td>
+        <td>{{drink.drink_image_url}}</td>
+    </tr>
+</tbody>
+</table> -->
+<!-- <div *ngIf="drinksLoaded">
+    <ng-container *ngFor="let drink of drinkList">
+        <p>{{drink?.drink_name}}  
+        {{drink?.drink_id}} 
+        {{drink?.drink_image_url}}</p>
+    </ng-container>
+</div> -->
+
+<!-- <div class="list-container">
+
+    <div class="great-container column-container">
+        <div class="list" cdkDropList
+        #greatList="cdkDropList"
+        [cdkDropListData]="greatList"
+        [cdkDropListConnectedTo]="[drinksList]"
+        (cdkDropListDropped)="onDrop($event)">
+            <h2>Sounds Great!</h2>
+            <mat-card *ngFor="let drink of lovedDrinks" cdkDrag>
+                <mat-card-header>
+                    <mat-card-title>{{drink?.drink_name}}</mat-card-title>
+                    <mat-card-subtitle>{{drink?.drink_id}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    
+
+    <div class="random-drink-container column-container">
+        <div class="list" cdkDropList
+        #greatList="cdkDropList"
+        [cdkDropListData]="drinksList"
+        [cdkDropListConnectedTo]="[drinksList]"
+        (cdkDropListDropped)="onDrop($event)">
+            <h2>Random Drinks</h2>
+            <mat-card *ngFor="let drink of drinkList" cdkDrag>
+                <mat-card-header>
+                    <mat-card-title>{{drink?.drink_name}}</mat-card-title>
+                    <mat-card-subtitle>{{drink?.drink_id}}<mat-card-subtitle>
+                </mat-card-header>
+            <mat-card>
+        </div>
+    
+  
+    <div class="gross-container column-container">
+        <div class="list">
+            <h2>Sounds Gross!</h2>
+            <mat-card *ngFor="let drink of hatedDrinks">
+                <mat-card-header>
+                    <mat-card-title>{{drink?.drink_name}}</mat-card-title>
+                    <mat-card-subtitle>{{drink?.drink_id}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div> 
+</div> -->
+
+
+<!-- <div class="list-container">
+    <div class="great-drinks-container column-container">
+      <div class="list"
+      cdkDropList
+      #greatDrinkList="cdkDropList"
+      [cdkDropListData]="greatDrinks"
+      [cdkDropListConnectedTo]="[randomDrinks]"
+      (cdkDropListDropped)="onDrop($event)">
+        <h2>Great Drinks</h2>
+        <mat-card  *ngFor="let drink of greatDrinks" cdkDrag>
+          <mat-card-header>
+            <mat-card-title>{{drink.drink_name}}</mat-card-title>
+            <mat-card-subtitle>{{drink.drink_id}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  
+    <div  class="done-container column-container">
+      <div class="list"
+      cdkDropList
+      #randomDrinks="cdkDropList"
+      [cdkDropListData]="randomDrinks"
+      [cdkDropListConnectedTo]="[greatDrinks]"
+      (cdkDropListDropped)="onDrop($event)">
+        <h2>Random Drinks</h2>
+        <mat-card  *ngFor="let drink of randomDrinks" cdkDrag>
+          <mat-card-header>
+            <mat-card-title>{{drink.drink_name}}</mat-card-title>
+            <mat-card-subtitle>{{drink.drink_id}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div> -->
+
+<button (click)="submit()" mat-raised-button flex="33" type="submit">
+    Submit
+</button>
+
+  <div cdkDropListGroup cdkDropListGroupOrientation="horizontal">
+    <div class="example-container">
+        <h2>Great Drinks</h2>
+        <div
+          cdkDropList
+          [cdkDropListData]="greatDrinks"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let greatDrink of greatDrinks" cdkDrag>
+                <img src="{{greatDrink.drink_image_url}}" alt="{{greatDrink.drink_name}}">
+                <br>
+              {{greatDrink.drink_name}}
+            </div>
+        </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Random Drinks</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="randomDrinks"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let randomDrink of randomDrinks" cdkDrag>
+            <img src="{{randomDrink.drink_image_url}}" alt="{{randomDrink.drink_name}}">
+            <br>
+            {{randomDrink.drink_name}}
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Gross Drinks</h2>
+        <div
+          cdkDropList
+          [cdkDropListData]="grossDrinks"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let grossDrink of grossDrinks" cdkDrag>
+            <img src="{{grossDrink.drink_image_url}}" alt="{{grossDrink.drink_name}}">
+                <br>
+              {{grossDrink.drink_name}}
+            </div>
+        </div>
+    </div>
+  
+
+  </div>

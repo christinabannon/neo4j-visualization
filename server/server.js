@@ -24,11 +24,9 @@ const Control = require ('./Control');
 
 // app.get('/api/drink/random', RandomDrinkControl.getRandom)
 app.get('/show-all', Control.showAll); 
-app.post('/user/afterSurvey', UserControl.afterSurvey)
-app.get('/user/getUser', UserControl.getUser)
-app.get('/user/getAllUsers', UserControl.getAllUsers)
-app.post('/user/addDrinkToUser', UserControl.addDrinkToUser)
-app.post('/user/updateWeightings', UserControl.updateWeightings)
+app.get('/new-node', Control.newNode); 
+// app.get('/random-drinks', Control.randomDrinks); 
+app.post('/save-selection', Control.saveSelection); 
 
 
 //assign port number
