@@ -12,15 +12,9 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class SelectComponent implements OnInit {
 
-  //drinkList:Drink[] = [];
-  // public randomDrinks = [{drink_id : '123', drink_name : 'test drink', drink_image_url : 'drink_image_url.com'}];
   public randomDrinks : Drink[] = []; 
   public greatDrinks : Drink[] = []; 
   public grossDrinks : Drink[] = []; 
-  //  Array<{drink_id: string, drink_name: string, 
-  //   drink_image_url: string}> = [
-      // {drink_id : '123', drink_name : 'test drink', drink_image_url : 'drink_image_url.com'}
-  //   ]; 
   drinksLoaded = false; 
 
   constructor(private configService : ConfigService, 
@@ -66,10 +60,8 @@ export class SelectComponent implements OnInit {
             }
             this.randomDrinks.push(parsedDrink)
           }
-          // console.log('drinkList: ' + this.randomDrinks)
         }
         this.drinksLoaded = true; 
-        // this.drinksLoaded = Promise.resolve(true);
       }
     )
   }
@@ -103,5 +95,8 @@ export class SelectComponent implements OnInit {
     // console.log("grossDrinks: " + this.grossDrinks); 
 
     this.configService.saveSelection(this.greatDrinks, this.grossDrinks)
+      .subscribe(data => {
+        console.log(data);
+      })
   }
 }

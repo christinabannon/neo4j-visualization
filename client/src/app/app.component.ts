@@ -13,7 +13,7 @@ export class AppComponent {
   name = ''; 
 
   constructor(
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, protected router : Router
   ) {}
 
   ngOnInit() {
@@ -25,4 +25,17 @@ export class AppComponent {
   showAll() {
     console.log("showAllButtonClicked");
   }
+
+  start() {
+    this.router.navigate(['/']);
+  }
+
+  select() {
+    this.router.navigate(['/select']);
+  }
+
+  show() {
+    this.router.navigate(['/neovis']);
+  }
+
 }

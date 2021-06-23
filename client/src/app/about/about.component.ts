@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ConfigService } from '../config/config.service'; 
 import { Router } from '@angular/router';
 
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
+  userName:string = '';
+  
   constructor(private configService : ConfigService, protected router : Router) { 
 
   }
@@ -19,12 +21,12 @@ export class AboutComponent implements OnInit {
   }
 
   addNode() {
-    this.configService.newNode().subscribe(
+    this.configService.newNode(this.userName).subscribe(
       data => {
         console.log(data);
         if (data.success) {
           localStorage.setItem('user_id', data.user_id); 
-          console.log(localStorage.getItem('user_id'));
+          // console.log(localStorage.getItem('user_id'));
           this.router.navigate(['/select']);
         }
       }

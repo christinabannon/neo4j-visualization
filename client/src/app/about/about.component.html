@@ -1,13 +1,11 @@
-<p>about works!</p>
-
 <mat-card class="user-mat-card" xFlex="20" fxFlex.xs="100%" fxFlex.sm="33%">
     <!-- <mat-toolbar color="primary">enter a name</mat-toolbar> -->
     <form class="user-input">
       <mat-form-field class="example-full-width">
-        <input #name matInput placeholder="enter a name">
+        <input #name matInput placeholder="enter a name" [(ngModel)]="userName" name='inputName'>
       </mat-form-field>
     </form>
     <button (click)="addNode()" mat-raised-button flex="33" type="submit">
-        start 
+        submit 
     </button>
 </mat-card>

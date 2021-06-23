@@ -23,9 +23,11 @@ export class ConfigService {
     return this.http.get(`${this.serverUri}/show-all`);
   }
 
-  public newNode() : Observable<any>{
-    // TODO encryption
-    return this.http.get<any>(this.serverUri + "/new-node")
+  public newNode(name:string) : Observable<any>{
+    let drinkData = {
+      userName: name
+    }
+    return this.http.post<any>(this.serverUri + "/new-node", drinkData);
       // .subscribe(async data => {
       //   console.log(data)
       //   localStorage.setItem("user_id", data.user_id);
@@ -41,12 +43,12 @@ export class ConfigService {
     console.log('great drinks: ' + JSON.stringify(greatDrinks))
     console.log('gross drinks: ' + JSON.stringify(grossDrinks))
     let personId = localStorage.getItem('user_id'); 
-    let drinkData : {
+    let drinkData = {
       userId : personId, 
-
-
-
+      greatDrinks: greatDrinks, 
+      grossDrinks: grossDrinks
     }
+    return this.http.post<any>(this.serverUri + '/save-selection', drinkData)
   }
 
   // public newNode():Number {
