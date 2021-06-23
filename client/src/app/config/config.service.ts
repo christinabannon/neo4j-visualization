@@ -10,14 +10,14 @@ import { Drink } from '../config/drink';
 })
 export class ConfigService {
 
-  clientUri = 'localhost:4200';
-  serverUri = 'http://localhost:3000';
+  //clientUri = 'localhost:4200';
+  serverUri = 'https://18.219.16.48:80';
 
   constructor(private http:HttpClient) { }
 
-  public getClientUri():string {
-    return this.clientUri; 
-  }
+  // public getClientUri():string {
+  //   return this.clientUri; 
+  // }
 
   public getAll():Observable<any> {
     return this.http.get(`${this.serverUri}/show-all`);
