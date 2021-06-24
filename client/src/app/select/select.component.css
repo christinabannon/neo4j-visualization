@@ -57,3 +57,12 @@
     width: 200px;
     height: auto;
   }
+
+  body {
+    background-color: powderblue;
+    margin: auto;
+    padding-top: 30px; 
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }

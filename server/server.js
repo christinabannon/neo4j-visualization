@@ -18,7 +18,11 @@ app.post('/save-selection', Control.saveSelection);
 
 
 //assign port number
-app.listen(80,()=> {
-    console.log("server starting on port 80");
+// app.listen(80,()=> {
+//     console.log("server starting on port 80");
+// });
+//
+app.listen(3000,()=> {
+    console.log("server starting on port 3000");
 });
 

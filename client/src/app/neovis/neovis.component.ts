@@ -17,7 +17,6 @@ export class NeovisComponent implements OnInit {
 
   ngOnInit(): void {
     this.init = true;
-    // this.userId = this.checkString(this.userId); 
   }
 
   drawAll(): void {
@@ -199,31 +198,5 @@ export class NeovisComponent implements OnInit {
       console.log(viz);
     }
   }
-
-  // checkString(qString:string|null):string {
-  //   let returnString = ""
-  //   if (qString) {
-  //     qString = qString.replace(/[^a-zA-Z ]/g, "");
-  //     qString = qString.trim(); 
-  //     if (qString.length > 20) {
-  //         qString = qString.substring(0, 20); 
-  //     }
-  //     returnString = qString; 
-  //   } else {
-  //     qString = localStorage.getItem('user_id')
-  //     if (qString) {
-  //       qString = qString.replace(/[^a-zA-Z ]/g, "");
-  //       qString = qString.trim(); 
-  //       if (qString.length > 20) {
-  //           qString = qString.substring(0, 20); 
-  //       }
-  //       returnString = qString; 
-  //     }
-  //   }
-  //   return returnString; 
-  // }
-
-
-
 
 }

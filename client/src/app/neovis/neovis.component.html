@@ -1,18 +1,15 @@
-<body>
-    {{userId}}
+
+
 <div ng-init="drawAll()">
     <div id="DrinkDB"></div>
 </div>
 
-<!-- <div ng-init="drawRecByPerson()">
-    <div id="DrinkDB"></div>
-</div>
-
-<div ng-init="drawRecByIngredient()">
-    <div id="DrinkDB"></div>
-</div> -->
+<div class ="buttons">
 <button (click)="drawAll()">Show All</button>
 <button (click)="drawRecByPerson()">Show Rec By Person</button>
 <button (click)="drawRecByIngredient()">Show Rec By Ingredient</button>
-</body>
+<br>
+</div>
+
+<!-- Your user #: {{userId}} -->
 
