@@ -1,5 +1,3 @@
-# neo4j-visualization
+# Drink Recommender
 
-This project will just show a neo4j graph visualization of some kind of data. Not sure what yet. 
-Maybe recipes and ingredients? Maybe a social media mock? Haven't decided yet. 
-NEAN Stack (If that's a thing). Actually lets call it an ANNE stack. 
+This project recommends drinks and stores data in Neo4j db
